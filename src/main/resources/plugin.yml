@@ -1,0 +1,9 @@
+name: Shadowban
+depend:
+  - ProtocolLib
+main: me.kuraky.shadowban.Shadowban
+version: 1.0
+api-version: 1.18
+commands:
+  shadowban:
+    aliases: [sb]
