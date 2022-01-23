@@ -13,7 +13,7 @@ public class JoinListener implements Listener {
 
     @EventHandler
     public void onJoin(PlayerJoinEvent event) {
-        File file = new File(Shadowban.instance.getDataFolder().getPath() + "/data/" + event.getPlayer().getUniqueId() + ".txt");
+        File file = new File(Shadowban.instance.playerDataPath + event.getPlayer().getUniqueId() + ".txt");
         if(file.exists()) {
             DataManager.INSTANCE.addToNastyPlayers(event.getPlayer());
         }

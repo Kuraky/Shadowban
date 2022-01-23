@@ -7,10 +7,13 @@ import me.kuraky.shadowban.listeners.QuitListener;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+
 @SuppressWarnings("all")
 public class Shadowban extends JavaPlugin {
 
     public static Shadowban instance;
+    public String playerDataPath;
 
     @Override
     public void onEnable() {
@@ -24,5 +27,8 @@ public class Shadowban extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new QuitListener(), this);
         ProtocolLibrary.getProtocolManager().addPacketListener(new Bamboozler());
         getDataFolder().mkdir();
+        playerDataPath = getDataFolder().getPath() + "/data";
+        (new File(playerDataPath)).mkdir();
+        playerDataPath += "/";
     }
 }

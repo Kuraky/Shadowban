@@ -27,7 +27,7 @@ public final class DataManager {
         }
         OfflinePlayer player = optionalOfflinePlayer.get();
 
-        File file = new File(player.getUniqueId() + ".txt");
+        File file = new File(Shadowban.instance.playerDataPath + player.getUniqueId() + ".txt");
         try {
             if(file.createNewFile()) {
                 FileWriter writer = new FileWriter(file);
